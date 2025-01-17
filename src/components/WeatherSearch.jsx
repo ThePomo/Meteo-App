@@ -24,7 +24,7 @@ const WeatherSearch = ({ city, setCity, onSearch, resetWeatherData }) => {
   };
 
   return (
-    <Row className="justify-content-center">
+    <Row className="justify-content-center mt-4">
       <Col md={6} className="mx-auto">
         <div className="input-group">
           <Form.Control
@@ -34,8 +34,15 @@ const WeatherSearch = ({ city, setCity, onSearch, resetWeatherData }) => {
             onChange={handleChange}
             onKeyDown={handleKeyPress}
             className="form-control-lg"
+            aria-label="Cerca città"
+            aria-describedby="search-button"
           />
-          <button className="btn btn-outline-secondary" onClick={handleClick}>
+          <button
+            className="btn btn-outline-secondary"
+            onClick={handleClick}
+            id="search-button"
+            aria-label="Cerca"
+          >
             <FaSearch size={20} />
           </button>
         </div>
