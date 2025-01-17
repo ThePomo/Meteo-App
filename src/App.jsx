@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavbarComponent from "./components/NavbarComponent";
-import HomePage from "./components/Homepage";
+import HomePage from "./components/HomePage";
 import WeatherSearchContainer from "./components/WeatherSearchContainer";
 import Footer from "./components/Footer";
 import "./App.css";
