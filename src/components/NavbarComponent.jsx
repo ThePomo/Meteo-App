@@ -1,10 +1,17 @@
-import "react";
-import { Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
 
 const NavbarComponent = () => {
   return (
-    <Navbar bg="dark" variant="dark">
-      <Navbar.Brand className="mx-auto">Meteo App</Navbar.Brand>
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand href="/" className="ml-3">
+        Meteo App
+      </Navbar.Brand>
+      <Nav className="ml-auto mr-3">
+        <Nav.Link as={Link} to="/weathersearch" className="mr-3">
+          Cerca la tua città
+        </Nav.Link>
+      </Nav>
     </Navbar>
   );
 };

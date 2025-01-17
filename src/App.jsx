@@ -1,15 +1,19 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavbarComponent from "./components/NavbarComponent";
-import WeatherSearch from "./components/WeatherSearch";
+import HomePage from "./components/Homepage";
+import WeatherSearchContainer from "./components/WeatherSearchContainer";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <NavbarComponent></NavbarComponent>
-      <WeatherSearch></WeatherSearch>
-      <h1>ciao</h1>
-    </>
+    <Router>
+      <NavbarComponent />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/weathersearch" element={<WeatherSearchContainer />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
