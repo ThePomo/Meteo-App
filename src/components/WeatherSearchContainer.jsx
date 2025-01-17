@@ -59,11 +59,11 @@ const WeatherSearchContainer = () => {
         </div>
       )}
       {weatherData && !error && (
-        <Row>
+        <Row className="justify-content-center">
           {weatherData.list.slice(0, 5).map((forecast, index) => (
-            <Col md={4} key={index}>
-              <Card className="mb-4">
-                <Card.Body className="text-center">
+            <Col md={4} lg={2} key={index} className="mb-4">
+              <Card className="text-center">
+                <Card.Body>
                   <Card.Title>{city}</Card.Title>
                   <i
                     className={`card-icon ${getWeatherIcon(
@@ -88,7 +88,8 @@ const WeatherSearchContainer = () => {
                     <strong>Pressione:</strong> {forecast.main.pressure} hPa
                   </Card.Text>
                   <Card.Text className="card-subtext">
-                    <strong>Visibilità:</strong> {forecast.visibility / 1000} km
+                    <strong>Visibilità:</strong>{" "}
+                    {Math.round(forecast.visibility / 1000)} km
                   </Card.Text>
                 </Card.Body>
               </Card>
