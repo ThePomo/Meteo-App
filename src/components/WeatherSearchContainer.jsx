@@ -84,6 +84,12 @@ const WeatherSearchContainer = () => {
                   <Card.Text className="card-subtext">
                     <strong>Umidità:</strong> {forecast.main.humidity}%
                   </Card.Text>
+                  <Card.Text className="card-subtext">
+                    <strong>Pressione:</strong> {forecast.main.pressure} hPa
+                  </Card.Text>
+                  <Card.Text className="card-subtext">
+                    <strong>Visibilità:</strong> {forecast.visibility / 1000} km
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Col>

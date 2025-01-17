@@ -81,6 +81,23 @@ const HomePage = () => {
                   <Card.Text className="card-subtext">
                     <strong>Umidità:</strong> {cityData.list[0].main.humidity}%
                   </Card.Text>
+                  {/* Nuovi dati aggiunti */}
+                  <Card.Text className="card-subtext">
+                    <strong>Pressione:</strong> {cityData.list[0].main.pressure}{" "}
+                    hPa
+                  </Card.Text>
+                  <Card.Text className="card-subtext">
+                    <strong>Visibilità:</strong>{" "}
+                    {cityData.list[0].visibility / 1000} km
+                  </Card.Text>
+                  <Card.Text className="card-subtext">
+                    <strong>Temp. Min:</strong>{" "}
+                    {Math.ceil(cityData.list[0].main.temp_min)}°C
+                  </Card.Text>
+                  <Card.Text className="card-subtext">
+                    <strong>Temp. Max:</strong>{" "}
+                    {Math.ceil(cityData.list[0].main.temp_max)}°C
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
