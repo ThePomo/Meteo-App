@@ -49,7 +49,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <Container className="mt-5">
+    <Container>
       <Row className="mb-4">
         <Col className="text-center">
           <h1>Benvenuto nella mia app di Meteo</h1>
@@ -59,68 +59,26 @@ const HomePage = () => {
         {weatherData.length > 0 &&
           weatherData.map((cityData, index) => (
             <Col md={4} key={index}>
-              <Card
-                className="mb-4"
-                style={{
-                  borderRadius: "15px",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                  backgroundColor: "#f5f5f5",
-                  padding: "15px",
-                }}
-              >
+              <Card className="mb-4">
                 <Card.Body className="text-center">
-                  <Card.Title
-                    style={{
-                      fontSize: "1.5rem",
-                      fontWeight: "bold",
-                      color: "#333",
-                    }}
-                  >
-                    {cities[index]}
-                  </Card.Title>
-
+                  <Card.Title>{cities[index]}</Card.Title>
                   <i
-                    className={`${getWeatherIcon(
+                    className={`card-icon ${getWeatherIcon(
                       cityData.list[0].weather[0].description
                     )}`}
-                    style={{
-                      fontSize: "50px",
-                      marginBottom: "15px",
-                      color: "#ffcc00",
-                    }}
                   ></i>
-                  <Card.Text
-                    style={{
-                      fontSize: "1.25rem",
-                      color: "#333",
-                    }}
-                  >
+                  <Card.Text className="card-text">
                     <strong>Temperatura:</strong>{" "}
                     {Math.ceil(cityData.list[0].main.temp)}°C
                   </Card.Text>
-                  <Card.Text
-                    style={{
-                      fontSize: "1.1rem",
-                      color: "#888",
-                    }}
-                  >
+                  <Card.Text className="card-subtext">
                     <strong>Condizione:</strong>{" "}
                     {cityData.list[0].weather[0].description}
                   </Card.Text>
-                  <Card.Text
-                    style={{
-                      fontSize: "1.1rem",
-                      color: "#888",
-                    }}
-                  >
+                  <Card.Text className="card-subtext">
                     <strong>Vento:</strong> {cityData.list[0].wind.speed} m/s
                   </Card.Text>
-                  <Card.Text
-                    style={{
-                      fontSize: "1.1rem",
-                      color: "#888",
-                    }}
-                  >
+                  <Card.Text className="card-subtext">
                     <strong>Umidità:</strong> {cityData.list[0].main.humidity}%
                   </Card.Text>
                 </Card.Body>

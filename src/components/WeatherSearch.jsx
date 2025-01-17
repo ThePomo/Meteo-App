@@ -33,16 +33,9 @@ const WeatherSearch = ({ city, setCity, onSearch, resetWeatherData }) => {
             value={city}
             onChange={handleChange}
             onKeyDown={handleKeyPress}
-            className="form-control-lg rounded-3 shadow-sm"
+            className="form-control-lg"
           />
-          <button
-            className="btn btn-outline-secondary rounded-3"
-            onClick={handleClick}
-            style={{
-              cursor: "pointer",
-              padding: "0.5rem",
-            }}
-          >
+          <button className="btn btn-outline-secondary" onClick={handleClick}>
             <FaSearch size={20} />
           </button>
         </div>

@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
+import logo from "../assets/552448.png";
 
 const NavbarComponent = () => {
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="/" className="ml-3">
-        Meteo App
+    <Navbar expand="lg" className="custom-navbar">
+      <Navbar.Brand href="/" className="navbar-brand d-flex align-items-center">
+        <img src={logo} alt="Logo" className="navbar-logo" />
+        <span className="ml-2">Meteo App</span>
       </Navbar.Brand>
-      <Nav className="ml-auto mr-3">
-        <Nav.Link as={Link} to="/weathersearch" className="mr-3">
+      <Nav className="navbar-nav">
+        <Nav.Link as={Link} to="/weathersearch" className="nav-link">
           Cerca la tua città
         </Nav.Link>
       </Nav>

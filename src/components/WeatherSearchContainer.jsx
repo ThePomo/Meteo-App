@@ -54,7 +54,7 @@ const WeatherSearchContainer = () => {
         resetWeatherData={resetWeatherData}
       />
       {error && (
-        <div className="text-center" style={{ color: "blue" }}>
+        <div className="text-center">
           <p>Città non trovata. Prova con un altro nome.</p>
         </div>
       )}
@@ -62,67 +62,26 @@ const WeatherSearchContainer = () => {
         <Row>
           {weatherData.list.slice(0, 5).map((forecast, index) => (
             <Col md={4} key={index}>
-              <Card
-                className="mb-4"
-                style={{
-                  borderRadius: "15px",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                  backgroundColor: "#f5f5f5",
-                  padding: "15px",
-                }}
-              >
+              <Card className="mb-4">
                 <Card.Body className="text-center">
-                  <Card.Title
-                    style={{
-                      fontSize: "1.5rem",
-                      fontWeight: "bold",
-                      color: "#333",
-                    }}
-                  >
-                    {city}
-                  </Card.Title>
+                  <Card.Title>{city}</Card.Title>
                   <i
-                    className={`${getWeatherIcon(
+                    className={`card-icon ${getWeatherIcon(
                       forecast.weather[0].description
                     )}`}
-                    style={{
-                      fontSize: "50px",
-                      marginBottom: "15px",
-                      color: "#ffcc00",
-                    }}
                   ></i>
-                  <Card.Text
-                    style={{
-                      fontSize: "1.25rem",
-                      color: "#333",
-                    }}
-                  >
+                  <Card.Text className="card-text">
                     <strong>Temperatura:</strong>{" "}
                     {Math.ceil(forecast.main.temp)}°C
                   </Card.Text>
-                  <Card.Text
-                    style={{
-                      fontSize: "1.1rem",
-                      color: "#888",
-                    }}
-                  >
+                  <Card.Text className="card-subtext">
                     <strong>Condizione:</strong>{" "}
                     {forecast.weather[0].description}
                   </Card.Text>
-                  <Card.Text
-                    style={{
-                      fontSize: "1.1rem",
-                      color: "#888",
-                    }}
-                  >
+                  <Card.Text className="card-subtext">
                     <strong>Vento:</strong> {forecast.wind.speed} m/s
                   </Card.Text>
-                  <Card.Text
-                    style={{
-                      fontSize: "1.1rem",
-                      color: "#888",
-                    }}
-                  >
+                  <Card.Text className="card-subtext">
                     <strong>Umidità:</strong> {forecast.main.humidity}%
                   </Card.Text>
                 </Card.Body>
