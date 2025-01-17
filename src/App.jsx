@@ -1,10 +1,12 @@
-import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavbarComponent from "./components/NavbarComponent";
+import WeatherSearch from "./components/WeatherSearch";
 
 function App() {
-  const [] = useState(0);
-
   return (
     <>
+      <NavbarComponent></NavbarComponent>
+      <WeatherSearch></WeatherSearch>
       <h1>ciao</h1>
     </>
   );
